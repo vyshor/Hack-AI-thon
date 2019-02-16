@@ -45,7 +45,7 @@ class _SSDResnetV2FpnFeatureExtractor(ssd_meta_arch.SSDFeatureExtractor):
                fpn_max_level=7,
                additional_layer_depth=256,
                reuse_weights=None,
-               use_explicit_padding=False,
+               use_explicit_padding=True,
                use_depthwise=False,
                override_base_feature_extractor_hyperparams=False):
     """SSD FPN feature extractor based on Resnet v1 architecture.
@@ -99,8 +99,8 @@ class _SSDResnetV2FpnFeatureExtractor(ssd_meta_arch.SSDFeatureExtractor):
     if self._depth_multiplier != 1.0:
       raise ValueError('Only depth 1.0 is supported, found: {}'.
                        format(self._depth_multiplier))
-    if self._use_explicit_padding is True:
-      raise ValueError('Explicit padding is not a valid option.')
+    # if self._use_explicit_padding is True:
+    #   raise ValueError('Explicit padding is not a valid option.')
     self._resnet_base_fn = resnet_base_fn
     self._resnet_scope_name = resnet_scope_name
     self._fpn_scope_name = fpn_scope_name
@@ -218,7 +218,7 @@ class SSDResnet50V2FpnFeatureExtractor(_SSDResnetV2FpnFeatureExtractor):
                fpn_max_level=7,
                additional_layer_depth=256,
                reuse_weights=None,
-               use_explicit_padding=False,
+               use_explicit_padding=True,
                use_depthwise=False,
                override_base_feature_extractor_hyperparams=False):
     """SSD Resnet50 V2 FPN feature extractor based on Resnet v1 architecture.
@@ -276,7 +276,7 @@ class SSDResnet101V2FpnFeatureExtractor(_SSDResnetV2FpnFeatureExtractor):
                fpn_max_level=7,
                additional_layer_depth=256,
                reuse_weights=None,
-               use_explicit_padding=False,
+               use_explicit_padding=True,
                use_depthwise=False,
                override_base_feature_extractor_hyperparams=False):
     """SSD Resnet101 V2 FPN feature extractor based on Resnet v1 architecture.
@@ -334,7 +334,7 @@ class SSDResnet152V2FpnFeatureExtractor(_SSDResnetV2FpnFeatureExtractor):
                fpn_max_level=7,
                additional_layer_depth=256,
                reuse_weights=None,
-               use_explicit_padding=False,
+               use_explicit_padding=True,
                use_depthwise=False,
                override_base_feature_extractor_hyperparams=False):
     """SSD Resnet152 V2 FPN feature extractor based on Resnet v1 architecture.
