@@ -67,6 +67,7 @@ SSD_FEATURE_EXTRACTOR_CLASS_MAP = {
     'ssd_resnet50_v1_fpn': ssd_resnet_v1_fpn.SSDResnet50V1FpnFeatureExtractor,
     'ssd_resnet101_v1_fpn': ssd_resnet_v1_fpn.SSDResnet101V1FpnFeatureExtractor,
     'ssd_resnet152_v1_fpn': ssd_resnet_v1_fpn.SSDResnet152V1FpnFeatureExtractor,
+    'ssd_resnet101_v2_fpn': ssd_resnet_v2_fpn.SSDResnet101V2FpnFeatureExtractor,
     'ssd_resnet152_v2_fpn': ssd_resnet_v2_fpn.SSDResnet152V2FpnFeatureExtractor,
     'ssd_resnet50_v1_ppn': ssd_resnet_v1_ppn.SSDResnet50V1PpnFeatureExtractor,
     'ssd_resnet101_v1_ppn':
