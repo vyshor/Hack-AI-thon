@@ -38,6 +38,7 @@ from object_detection.models import faster_rcnn_nas_feature_extractor as frcnn_n
 from object_detection.models import faster_rcnn_pnas_feature_extractor as frcnn_pnas
 from object_detection.models import faster_rcnn_resnet_v1_feature_extractor as frcnn_resnet_v1
 from object_detection.models import ssd_resnet_v1_fpn_feature_extractor as ssd_resnet_v1_fpn
+from object_detection.models import ssd_resnet_v2_fpn_feature_extractor as ssd_resnet_v2_fpn
 from object_detection.models import ssd_resnet_v1_ppn_feature_extractor as ssd_resnet_v1_ppn
 from object_detection.models.embedded_ssd_mobilenet_v1_feature_extractor import EmbeddedSSDMobileNetV1FeatureExtractor
 from object_detection.models.ssd_inception_v2_feature_extractor import SSDInceptionV2FeatureExtractor
@@ -66,6 +67,7 @@ SSD_FEATURE_EXTRACTOR_CLASS_MAP = {
     'ssd_resnet50_v1_fpn': ssd_resnet_v1_fpn.SSDResnet50V1FpnFeatureExtractor,
     'ssd_resnet101_v1_fpn': ssd_resnet_v1_fpn.SSDResnet101V1FpnFeatureExtractor,
     'ssd_resnet152_v1_fpn': ssd_resnet_v1_fpn.SSDResnet152V1FpnFeatureExtractor,
+    'ssd_resnet152_v2_fpn': ssd_resnet_v2_fpn.SSDResnet152V2FpnFeatureExtractor,
     'ssd_resnet50_v1_ppn': ssd_resnet_v1_ppn.SSDResnet50V1PpnFeatureExtractor,
     'ssd_resnet101_v1_ppn':
         ssd_resnet_v1_ppn.SSDResnet101V1PpnFeatureExtractor,
