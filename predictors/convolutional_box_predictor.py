@@ -18,6 +18,7 @@ import functools
 import tensorflow as tf
 from object_detection.core import box_predictor
 from object_detection.utils import static_shape
+from statistics import mode
 
 slim = tf.contrib.slim
 
@@ -351,9 +352,10 @@ class WeightSharedConvolutionalBoxPredictor(box_predictor.BoxPredictor):
         feature maps.
     """
     if len(set(num_predictions_per_location_list)) > 1:
-      raise ValueError('num predictions per location must be same for all'
-                       'feature maps, found: {}'.format(
-                           num_predictions_per_location_list))
+      # raise ValueError('num predictions per location must be same for all'
+      #                  'feature maps, found: {}'.format(
+      #                      num_predictions_per_location_list))
+        num_predictions_per_location_list = [mode(num_predictions_per_location_list)] * len(num_predictions_per_location_list)
     feature_channels = [
         image_feature.shape[3].value for image_feature in image_features
     ]
