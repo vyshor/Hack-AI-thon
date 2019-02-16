@@ -173,7 +173,7 @@ class _SSDResnetV2FpnFeatureExtractor(ssd_meta_arch.SSDFeatureExtractor):
               is_training=None,
               global_pool=False,
               output_stride=None,
-              store_non_strided_activations=True,
+              # store_non_strided_activations=True,
               scope=scope)
           image_features = self._filter_features(image_features)
       with slim.arg_scope(self._conv_hyperparams_fn()):
