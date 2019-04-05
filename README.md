@@ -1,71 +1,74 @@
-# object_detection
+# Hack-AI-thon
 
-This repository is forked and modified from tensorflow object detection model. 
+#### Top 6 Finalist for YITU Singapore Hack-AI-thon 2019
 
-To run baseline code for the hackathon, you may follow the instruction below:
+> This competition is a 72-hours data science hackathon, where we have to train an object detection model from scratch. We were equipped with AWS credits and the model baseline code to build a model to detect pedestrian and cars. Despite my team (asdf) being at 21st position on the final public leaderboard, my team emerged as 6th place in the final private leaderboard.
 
-1) # fork / mirror this repository      
-    !!!important: make it as your own private repository and assign right to YITU admin （refer to section 5 in "Hackathon_Baseline_User_Guider"!!! 
-    
+#### Final Private Leaderboard
 
-2) # environment setttings
-
-    ``` bash
-    # activate AWS virtual environment
-    cd ~
-    source activate tensorflow_p36
-    ```
-
-    ``` bash
-    # Setup PYTHONPATH
-    cd hackathon-sg/ 
-    export PYTHONPATH=$PYTHONPATH:`pwd`:`pwd`/slim    
-    ```
-
-3) # to generate tfrecord data
-
-    ``` bash
-    cd object_detection
-    python script/generate_tfrecord_from_csv.py --image_dir ../input/training/images/ --output_path ../input/hackathon --csv_file ../input/training/train_label.csv --validation_set_size 500
-    ```
-
-4) # to train the model 
-
-    ``` bash 
-    python script/train.py --logtostderr --train_dir=training/baseline/ --pipeline_config_path=training/hackathon_baseline.config
-    ```
-   #to visualize the training results, can only use 8000 for port no. 
-      tensorboard --logdir=training/baseline --port 8000
-     
-5) # to eval the trained model 
-
-    ``` bash 
-    python script/eval.py --logtostderr --pipeline_config_path=training/hackathon_baseline.config --checkpoint_dir=training/baseline --eval_dir=eval/baseline
-    ```
-    
-   #To visualize the eval results, can only use 8000 for port no. 
-      tensorboard --logdir=eval/baseline --port 8000
-
-6) # to export the trained model 
-
-    ``` bash
-    python script/export_inference_graph.py --input_type image_tensor --pipeline_config_path training/hackathon_baseline.config   --trained_checkpoint_prefix training/baseline/model.ckpt-20000 --output_directory output/
-    ```
-    
-7) # to output the results to .csv
-
-    ``` bash
-    python script/output_csv_results.py threshold=0.5 data_dir=../input/testing/images/ model_path=output/frozen_inference_graph.pb output_path=output/submission.csv label_map=../input/label_map.pbtxt
-    ```
-        
-8) # to submit the results 
-    please follow the instruction from ”Hackathon Infra User Manual“ to submit your detection results. 
-
-    git push your modified codes to your private repository whenever you make a submission.
-    
-    !!!DO PUSH YOUR CODES FOR EVERY SUBMISSION YOU MADE FOR CODE VERIFICATION PURPOSE!!!
+|Rank|Group Name|Private Score|
+|--- |--- |--- |
+|1|We_AI_yitu|0.423026772158771|
+|2|Lord Bak|0.420564611744525|
+|3|not important|0.414602021814902|
+|4|Computer Science|0.394764065730958|
+|5|Python Sneks|0.376340992912348|
+|6|asdf|0.376003317885492|
+|7|Neo Prints|0.363523831512142|
+|8|Uganda Knuckles|0.350221229990333|
+|9|POTATO|0.347841985928046|
+|10|Black Mesa|0.334786984725066|
+|11|Nonsense Time|0.322999722408501|
+|12|Giant Pandas|0.316245806082421|
+|13|Relu|0.316074704799892|
+|14|Option1|0.301397079152423|
+|15|Beginners|0.291032112810299|
+|16|HowToTrainYour_|0.284830215350042|
+|17|CSBaboons|0.276840147643897|
+|18|Niubility|0.21889947729377|
+|19|sswag|0.213668000307094|
+|20|git;|0.205585617100473|
+|21|Blu|0.19143636373782|
+|22|Kalix|0.183473419686701|
+|23|Error: Out of Memory|0.159576479131686|
 
 
 
-    
- 
+#### Final Public Leaderboard
+
+|Rank|Group Name|Public Score|Accepted At|
+|--- |--- |--- |--- |
+|1|Nonsense Time|0.507119708955353|2019-02-16 21:38:51.413597|
+|2|not important|0.426923258906503|2019-02-17 22:24:02.3047|
+|3|Niubility|0.414761381240141|2019-02-17 21:21:24.401739|
+|4|Giant Pandas|0.378912526351962|2019-02-17 23:49:33.762507|
+|5|Lord Bak|0.367156876210814|2019-02-17 23:28:40.406343|
+|6|Relu|0.350615734251414|2019-02-17 21:28:29.720197|
+|7|We_AI_yitu|0.347410347200722|2019-02-17 19:49:43.660957|
+|8|git;|0.334453226040471|2019-02-16 09:13:50.757896|
+|9|Neo Prints|0.33437356542458|2019-02-17 23:39:01.468714|
+|10|Beginners|0.33204656446704|2019-02-17 18:08:21.873468|
+|11|Blu|0.331665064623157|2019-02-17 20:43:01.689456|
+|12|Error: Out of Memory|0.308482331960977|2019-02-15 22:05:46.133344|
+|13|Team Triceratops|0.306746417157775|2019-02-17 13:00:28.031845|
+|14|team3000|0.303518566728379|2019-02-17 21:04:41.209477|
+|15|POTATO|0.302174321832552|2019-02-17 23:42:55.265303|
+|16|Computer Science|0.295014658282996|2019-02-17 23:38:17.501591|
+|17|CSBaboons|0.285492708224524|2019-02-17 09:13:08.620869|
+|18|Team 3000|0.266370019273145|2019-02-17 23:46:52.484913|
+|19|sswag|0.265150995422743|2019-02-16 01:29:50.6386|
+|20|Python Sneks|0.264944955711224|2019-02-17 23:54:20.831107|
+|21|asdf|0.252562634763669|2019-02-16 09:40:21.506642|
+|22|CodeAge|0.251997796086059|2019-02-15 20:04:57.720363|
+|23|Uganda Knuckles|0.243329802511589|2019-02-17 21:57:13.42612|
+|24|WillCodeForFood|0.229875487494235|2019-02-17 15:45:12.836094|
+|25|Artificial Idiots|0.228751209813953|2019-02-17 15:45:07.939424|
+|26|Black Mesa|0.221252774615334|2019-02-16 10:00:52.174043|
+|27|Kalix|0.215705085992546|2019-02-17 13:21:57.45553|
+|28|HowToTrainYour_|0.21486794582002|2019-02-17 12:16:46.85671|
+|29|Ertu|0.213425532693573|2019-02-16 20:14:14.281895|
+|30|Zero Percent|0.208253330073145|2019-02-17 03:18:00.595806|
+|31|GradeX|0.19720386621295|2019-02-17 02:18:01.848426|
+|32|Option1|0.189422590079195|2019-02-16 18:15:04.724535|
+|33|Sign Up Team|0.168582854988144|2019-02-17 17:41:22.293015|
+|34|Kiriti|0.157665571117326|2019-02-16 19:36:03.115722|
